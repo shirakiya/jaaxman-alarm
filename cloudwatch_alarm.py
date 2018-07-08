@@ -14,7 +14,7 @@ def _send_slack(title, body):
         'text': body,
     }]
 
-    slack.notify(user_name='jaaxman-alarm-handler',
+    slack.notify(username='jaaxman-alarm-handler',
                  attachments=attachments)
 
 
