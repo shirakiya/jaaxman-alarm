@@ -1,0 +1,30 @@
+{
+  "production": {
+    "apigateway_enabled": false,
+    "aws_region": "ap-northeast-1",
+    "cloudwatch_log_level": "INFO",
+    "events": [
+      {
+        "function": "cloudwatch_alarm.lambda_handler",
+        "event_source": {
+          "arn": "arn:aws:sns:ap-northeast-1:271218406932:jaaxman-alarm",
+          "events": [
+            "sns:Publish"
+          ]
+        }
+      }
+    ],
+    "keep_warm": false,
+    "lambda_description": "Jaaxman function - CloudWatch Alarm to send Slack",
+    "log_level": "INFO",
+    "memory_size": 128,
+    "project_name": "jaaxman-alarm-handler",
+    "remote_env": "s3://jaaxman-production-infla/jaaxman-alarm-handler-env.json",
+    "runtime": "python3.6",
+    "s3_bucket": "jaaxman-production-infla",
+    "tags": {
+      "Project": "Jaaxman",
+      "Role": "AlarmHandler"
+    }
+  }
+}
